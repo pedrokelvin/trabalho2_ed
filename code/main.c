@@ -6,7 +6,7 @@
 #include"arvore.h"
 #include"criador.h"
 
-
+//oi
 int main()
 {
 	
