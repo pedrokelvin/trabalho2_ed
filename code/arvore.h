@@ -26,10 +26,8 @@ Tree* tree_createleaf(Genetica* criada); // cria a folha
 int tree_empty(Tree* mangueira); // verifica se arvore esta vazia
 Tree* tree_push(Genetica* criada, Tree* mangueira); //insere o dado na arvore
 
-
-
-
 Tree* tree_free(Tree* mangueira);
+
 
 
 

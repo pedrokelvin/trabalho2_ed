@@ -9,7 +9,7 @@
 //oi
 int main()
 {
-	
+
 
 	/*Criamos uma arvore de personagem para testes */
 	/*Lembre-se que ela recebe o id do personagem */
@@ -17,7 +17,6 @@ int main()
 	imprime_arvore(personagem);
 	printf("\nO personagem impresso graficamente nao corresponde ao personagem vazio impresso de forma textual");
 	printf("\n\n");
-
 
 
 	/*Caso queira testar a biblioteca grafica */
