@@ -11,7 +11,7 @@ struct genetica
     int dom; /* dominancia do gene */
 };
 typedef struct genetica Genetica;
-
+/*---------------------------------------------------------------------------*/
 struct tree
 {
     Genetica *info;
@@ -19,7 +19,7 @@ struct tree
     struct tree* right;
 };
 typedef struct tree Tree;
-
+/*---------------------------------------------------------------------------*/
 /*cria a arvore*/
 Tree* tree_create(); // cria arovre
 Tree* tree_createleaf(Genetica* criada); // cria a folha

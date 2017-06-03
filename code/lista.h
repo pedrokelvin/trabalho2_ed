@@ -6,11 +6,11 @@ typedef struct nodo{
     struct nodo *ant;
 
 }Nodo;
-
+/*---------------------------------------------------------------------------*/
 typedef struct lista{
     Nodo* cabeca;
 }Lista;
-
+/*---------------------------------------------------------------------------*/
 
 Lista* cria_lista();
 int vazia_lista(Lista* cabeca);
