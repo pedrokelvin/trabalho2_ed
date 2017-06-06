@@ -17,7 +17,7 @@ int vazia_lista(Lista* cabeca){
 
 }
 
-// TESTES
+// 000 dsdad aTESTES
 
 void insere_lista(Lista* l, int posicao, Tree* personagem){
 
