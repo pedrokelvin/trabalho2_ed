@@ -17,7 +17,13 @@ int vazia_lista(Lista* cabeca){
 
 }
 
+<<<<<<< HEAD
 // 000 dsdad aTESTES
+=======
+/*comentário*/
+
+// TESTES
+>>>>>>> 87e5aefb8646823d114abfec492ce73445dd6208
 
 void insere_lista(Lista* l, int posicao, Tree* personagem){
 
