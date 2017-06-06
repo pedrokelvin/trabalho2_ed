@@ -17,6 +17,8 @@ int vazia_lista(Lista* cabeca){
 
 }
 
+/*comentário*/
+
 // TESTES
 
 void insere_lista(Lista* l, int posicao, Tree* personagem){
