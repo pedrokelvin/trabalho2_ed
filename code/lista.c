@@ -16,6 +16,7 @@ int vazia_lista(Lista* cabeca){
     return(cabeca->cabeca == NULL);
 
 }
+/*comentário*/
 
 void insere_lista(Lista* l, int posicao, Tree* personagem){
 
