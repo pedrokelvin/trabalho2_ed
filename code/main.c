@@ -6,6 +6,8 @@
 #include "arvore.h"
 #include "criador.h"
 #include "lista.h"
+#include "preenchimento.h"
+
 //oi
 
 void preenche_personagem(Tree* personagem){

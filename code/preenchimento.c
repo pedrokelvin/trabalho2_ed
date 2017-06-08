@@ -1,23 +1,21 @@
 void insere(Tree* nodo, Genetica* carac){
-  if(nodo->info != NULL){
-    return;
+  if(nodo->info == NULL && nodo->left != NULL && nodo->left->info == NULL){
+    insere(nodo->left, carac);
   }
-  if(nodo->left)
   else{
-    if(nodo->left != NULL){
-      insere(nodo->left, carac);
-    }
-    if(nodo->right != NULL){
-      insere(nodo->right, carac);
-    }
-    else if(nodo->info == NULL){
+    if(nodo->left == NULL && nodo->right == NULL){
       nodo->info = carac;
-    return;
+      return;
+    }
+    else{
+      if(nodo->left->info != NULL && nodo->right->info != NULL){
+        nodo->info = carac;
+        return;
+      }
+      else
+        insere(nodo->right, carac);
     }
   }
-
-
-
 }
 
 void preenche_olhos_cor(Tree* personagem, Genetica* cor1, Genetica* cor2){
