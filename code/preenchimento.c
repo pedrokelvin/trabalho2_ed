@@ -3,60 +3,87 @@
 #include <stdio.h>
 #include <string.h>
 
-void insere(Tree* nodo, Genetica* carac){
-  char compara[20]="VAZIO\0";
+//Tentando criar agora o meu código
 
-  if(strcmp(nodo->info->carac,compara)!=0
-}
+void insere(Tree *nodo, Tree*nodo2){
 
+    if(nodo->left == NULL && nodo->right == NULL)
+        return;
 
+    /*
+    if(strcmp(nodo->info->carac,"cabelos") == 0 || strcmp(nodo->info->carac,"olhos") == 0)
+        Nodo* no = nodo;
+    */
 
+    if(strcmp(nodo->left->info->carac,"VAZIO") == 0 && strcmp(nodo->right->info->carac,"VAZIO") == 0)
+    {
+        Genetica *genetic1, *genetic2;
 
-
-void insere(Tree* nodo, Genetica* carac){
-  char compara[20]="VAZIO\0";
-  if((strcmp(nodo->info->carac,compara)!=0) && (nodo->left != NULL) && (strcmp(nodo->left->info->carac,compara)!=0)){
-    insere(nodo->left, carac);
-  }
-  else{
-    if(nodo->left == NULL && nodo->right == NULL){
-      nodo->info = carac;
-      printf("Inseri na folha.\n");
-      return;
-    }
-    else if(strcmp(nodo->left->info->carac,compara) == 0){
-      nodo->left->info = carac;
-      printf("Inseri num nó aí na esquerda.\n");
-      return;
-    }
-    else if(strcmp(nodo->right->info->carac,compara) == 0){
-      nodo->right->info = carac;
-      printf("Inseri num nó aí na direita.\n");
-      return;
+        if(strcmp(nodo->info->carac,"formato") == 0)
+        {
+            genetic1 = cria_tipo_olhos();
+            genetic2 = cria_tipo_olhos();
+            nodo->left->info = genetic1;
+            nodo->right->info = genetic2;
+        }
+        else if(strcmp(nodo->info->carac,"cor") == 0)
+        {
+            if(strcmp(nodo2->info->carac,"cabelos") == 0)
+            {
+                genetic1 = cria_cor_cabelos();
+                genetic2 = cria_cor_cabelos();
+                nodo->left->info = genetic1;
+                nodo->right->info = genetic2;
+            }
+            else if(strcmp(nodo2->info->carac,"olhos") == 0)
+            {
+                genetic1 = cria_cor_olhos();
+                genetic2 = cria_cor_olhos();
+                nodo->left->info = genetic1;
+                nodo->right->info = genetic2;
+            }
+        }
+        else if(strcmp(nodo->info->carac,"camisa") == 0)
+        {
+            genetic1 = cria_camisa_tronco();
+            genetic2 = cria_camisa_tronco();
+            nodo->left->info = genetic1;
+            nodo->right->info = genetic2;
+        }
+        else if(strcmp(nodo->info->carac,"tipo") == 0)
+        {
+            genetic1 = cria_tipo_cabelos();
+            genetic2 = cria_tipo_cabelos();
+            nodo->left->info = genetic1;
+            nodo->right->info = genetic2;
+        }
+        else if(strcmp(nodo->info->carac,"calcas") == 0)
+        {
+            genetic1 = cria_calca_membros();
+            genetic2 = cria_calca_membros();
+            nodo->left->info = genetic1;
+            nodo->right->info = genetic2;
+        }
+        else if(strcmp(nodo->info->carac,"botas") == 0)
+        {
+            genetic1 = cria_botas_membros();
+            genetic2 = cria_botas_membros();
+            nodo->left->info = genetic1;
+            nodo->right->info = genetic2;
+        }
+        else if(strcmp(nodo->info->carac,"raca") == 0)
+        {
+            genetic1 = cria_raca_tronco();
+            genetic2 = cria_raca_tronco();
+            nodo->left->info = genetic1;
+            nodo->right->info = genetic2;
+        }
     }
     else
-      insere(nodo->right, carac);
+    {
+        insere(nodo->left,nodo);
+        insere(nodo->right,nodo);
     }
-}
 
-void preenche_olhos_cor(Tree* personagem, Genetica* cor1, Genetica* cor2){
-    insere(personagem, cor1);
-    insere(personagem, cor2);
-}
 
-//void preenche_olhos_tipo(Tree* personagem, Genetica* tipo1, Genetica* tipo2){
-
-//}
-
-void preenche_personagem_inicial(Tree* personagem){
-  Genetica* olhos_cor_1 = cria_cor_olhos();
-  imprime_genetica(olhos_cor_1);
-  Genetica* olhos_cor_2 = cria_cor_olhos();
-  imprime_genetica(olhos_cor_2);
-
-  //Genetica* olhos_tipo_1 = cria_tipo_olhos();
-  //Genetica* olhos_tipo_2 = cria_tipo_olhos();
-
-  preenche_olhos_cor(personagem, olhos_cor_1, olhos_cor_2);
-  //preenche_olhos_tipo(personagem, olhos_tipo_1, olhos_tipo_2);
 }
