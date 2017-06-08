@@ -1,26 +1,42 @@
 #include "preenchimento.h"
 #include <stdlib.h>
+#include <stdio.h>
 #include <string.h>
 
 void insere(Tree* nodo, Genetica* carac){
   char compara[20]="VAZIO\0";
-  if(strcmp(nodo->info->carac,compara) && nodo->left != NULL && strcmp(nodo->left->info->carac,compara)){
+
+  if(strcmp(nodo->info->carac,compara)!=0
+}
+
+
+
+
+
+void insere(Tree* nodo, Genetica* carac){
+  char compara[20]="VAZIO\0";
+  if((strcmp(nodo->info->carac,compara)!=0) && (nodo->left != NULL) && (strcmp(nodo->left->info->carac,compara)!=0)){
     insere(nodo->left, carac);
   }
   else{
     if(nodo->left == NULL && nodo->right == NULL){
       nodo->info = carac;
+      printf("Inseri na folha.\n");
       return;
     }
-    else{
-      if(!strcmp(nodo->left->info->carac,compara) && !strcmp(nodo->right->info->carac,compara)){
-        nodo->info = carac;
-        return;
-      }
-      else
-        insere(nodo->right, carac);
+    else if(strcmp(nodo->left->info->carac,compara) == 0){
+      nodo->left->info = carac;
+      printf("Inseri num nó aí na esquerda.\n");
+      return;
     }
-  }
+    else if(strcmp(nodo->right->info->carac,compara) == 0){
+      nodo->right->info = carac;
+      printf("Inseri num nó aí na direita.\n");
+      return;
+    }
+    else
+      insere(nodo->right, carac);
+    }
 }
 
 void preenche_olhos_cor(Tree* personagem, Genetica* cor1, Genetica* cor2){
